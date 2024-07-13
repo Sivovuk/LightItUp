@@ -1287,6 +1287,7 @@ namespace LightItUp.Game
         {
             CheckForBlocks(collision.gameObject);
             CheckForPlayerDummy(collision.gameObject);
+            CheckForPowerUp(collision.gameObject);
         }
         protected void CheckCollisionRelease(Collision2D collision)
         {
@@ -1351,6 +1352,17 @@ namespace LightItUp.Game
         protected bool CheckForPlayerDummy(GameObject go)
         {
             var bl = go.GetComponent<PlayerDummy>();
+            if (bl != null)
+            {
+                PlayerHit();
+                return true;
+            }
+            return false;
+        }
+
+        protected bool CheckForPowerUp(GameObject go)
+        {
+            var bl = go.GetComponent<SeekingMissile>();
             if (bl != null)
             {
                 PlayerHit();
