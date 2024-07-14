@@ -9,19 +9,11 @@ public class SeekingMissile : MonoBehaviour
 {
     public float missileSpeed = 5;      // Adjust the speed amount of the missile
     public float forceAmount = 10f;     // Adjust the force amount as needed
-    public LayerMask blockLayer;
 
     private Vector3 positionToTrack;
 
     private bool startTracking = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (startTracking)

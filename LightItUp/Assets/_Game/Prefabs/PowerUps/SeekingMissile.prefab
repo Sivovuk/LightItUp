@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -8968678196313140609}
   - component: {fileID: 6028605441897876231}
   - component: {fileID: 2428129185482912026}
+  - component: {fileID: 4966674655571267906}
   m_Layer: 21
   m_Name: SeekingMissile
   m_TagString: Untagged
@@ -140,3 +141,19 @@ MonoBehaviour:
   blockLayer:
     serializedVersion: 2
     m_Bits: 512
+  pathfinding: {fileID: 4966674655571267906}
+--- !u!114 &4966674655571267906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659956330748554108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca133f3954a526f4aa1b184533bbe0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 1659956330748554106}
+  target: {fileID: 0}
+  startTracking: 0
