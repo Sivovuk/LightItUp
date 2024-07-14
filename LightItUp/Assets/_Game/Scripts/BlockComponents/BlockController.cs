@@ -1281,13 +1281,13 @@ namespace LightItUp.Game
         {
             CheckForBlackHole(col.gameObject);
             CheckForPlayerLitArea(col.gameObject);
+            CheckForPowerUp(col.gameObject);
         }
 
         protected void CheckCollision(Collision2D collision)
         {
             CheckForBlocks(collision.gameObject);
             CheckForPlayerDummy(collision.gameObject);
-            CheckForPowerUp(collision.gameObject);
         }
         protected void CheckCollisionRelease(Collision2D collision)
         {

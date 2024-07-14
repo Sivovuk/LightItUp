@@ -260,6 +260,7 @@ namespace LightItUp
 
         void ProgressBlendTime() {
             targets.RemoveAll(x => x.target == null);
+            targets.RemoveAll(x => x.target.isActiveAndEnabled == false);
             foreach (var t in targets)
             {
                 t.rect = IncludeRect(ExpandRect(player.worldRect, GameSettings.CameraFocus.playerBorder), ExpandRect(t.target.worldRect, GameSettings.CameraFocus.blockBorder));

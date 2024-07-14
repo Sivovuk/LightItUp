@@ -33,7 +33,7 @@ public class PowerUpSeekingMissiles : MonoBehaviour
         for (int i = 0; i < numberOfMissiles; i++)
         {
             GameObject missile = Instantiate(missilePrefab, player.transform.position, Quaternion.identity);
-            missile.GetComponent<SeekingMissile>().SetupMissile(blocks[i > blocks.Count - 1 ? blocks.Count : i].transform.position);
+            missile.GetComponent<SeekingMissile>().SetupMissile(blocks[i > blocks.Count - 1 ? blocks.Count-1 : i].transform.position);
         }
     }
 }
