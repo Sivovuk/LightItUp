@@ -38,21 +38,26 @@ public class SeekingMissile : MonoBehaviour
                 
     }
 
-    private void OnTriggerEnter2D(Collider2D collider2D) 
+    private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collider2D.gameObject.TryGetComponent(out BlockController bc))
+        if (collision2D.gameObject.TryGetComponent(out BlockController bc))
         {
-            if (bc.IsLit) return;
-            if(collider2D.gameObject.TryGetComponent(out Rigidbody2D rb))
+            if(collision2D.gameObject.TryGetComponent(out Rigidbody2D rb))
             {
                 // Calculate the direction of the force to apply
-                Vector2 forceDirection = (collider2D.transform.position - transform.position).normalized;
+                Vector2 forceDirection = (collision2D.transform.position - transform.position).normalized;
 
                 // Apply the force at the point of the collision
                 rb.AddForceAtPosition(forceDirection * forceAmount, transform.position, ForceMode2D.Impulse);
             }
-            
-            gameObject.SetActive(false);
+            SceneCleanUp();
         }
+    }
+
+    public void SceneCleanUp()
+    {
+        positionToTrack = Vector2.zero;
+        startTracking = false;
+        gameObject.SetActive(false);
     }
 }

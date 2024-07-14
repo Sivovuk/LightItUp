@@ -300,7 +300,7 @@ namespace LightItUp.Data
             }
             Resources.UnloadUnusedAssets();
 			CinemachineController.Instance.Deactivate ();
-
+            PowerUpController.Instance.SceneCleanUp();
         }
         public bool IsLastBlock()
         {
